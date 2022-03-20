@@ -1,0 +1,74 @@
+<header>
+  <div class="navbar">
+      <div class="navbar-brand align-item-center d-flex">
+          
+          
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+          </div>
+          
+             
+          </div>
+          <div class="search">
+
+         
+          <input type="text" #mycalory class="form-control"  placeholder="search based on calory"><button>
+            <mat-icon (click)="searchcalory(mycalory.value)">search</mat-icon>
+          </button>
+        </div>
+
+
+     
+      
+      <button routerLink="favorite" class="btn btn-danger" (click)="calltofav()">
+  
+        <mat-icon>favorite</mat-icon>
+       </button>
+       <div class="logout">
+        <button class="btn btn-danger" type="submit" (click)="logout()">
+          <mat-icon>power_settings_new</mat-icon>
+        </button>
+      </div>
+      
+      
+  </div>
+</header>
+
+
+     
+      
+  
+      
+
+    
+    
+
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Products </span>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let nutri of NutritionArr | filter:searchkey:'name'">
+    
+      
+       
+      <div class="card col-12 col-sm-12 col-md-7 col-lg-2">
+       
+        <h5><strong>{{nutri.name}}</strong></h5>
+        <img src="{{nutri.image}}" alt="">
+        Productid:{{nutri.productid}}<br>
+        Calory :{{nutri.calory}}<br>
+        Glycel : {{nutri.glycel}}<br>
+        Fats : {{nutri.fats}}<br>
+        Carbs : {{nutri.carbs}}<br>
+        Protien : {{nutri.protein}}<br>
+      <button class="btn btn-primary" (click)=addtofav(nutri)>Add To Fav</button>
+      </div>
+     
+  </ng-container>
+  </div>
+</div>
+
+
+

@@ -41,6 +41,8 @@ let data = {
     sessionStorage.setItem("usermail",this.emailid.value);
    
 
+    this.authservice.storeMyemailid(res["emailid"]);
+    sessionStorage.setItem("emailid",this.emailid.value);
    
       this.myroute.openUserview();
     },
@@ -49,6 +51,23 @@ let data = {
 
  
  }
+
+ validateemail():string{
+  if(this.emailid.touched && this.emailid.invalid){
+    return "email cannot be null";
+  } else
+  return "";
+}
+validatepass():string{
+  if(this.password.touched && this.password.invalid){
+    if(this.password.errors?.['required']){
+      return "password  cannot be null"
+    }else
+      return "pass should be minimum 6 chars";
+    }else
+    return "";
+  }
+
 
   signup(){
     this.nutriservice.addCustomer(this.userobj).subscribe(

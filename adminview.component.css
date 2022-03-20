@@ -1,0 +1,41 @@
+.navbar{
+    background-color:  #45A29E;
+    justify-content: space-around;
+  }
+.card p{
+    padding-top: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 19px;
+    color:midnightblue;
+}
+
+.card {
+    padding: 20px;
+    margin: 50px;
+    width: 250px;
+    border: 2px solid black;
+    }
+.card img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+    }
+.card img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    }
+.card h5{
+      font-size: large;
+      text-align: center;
+      margin-top: 10px;
+    }
+header button{
+    float: right;
+}
+
+.clsmat{
+    background-image:url("https://www.rosannadavisonnutrition.com/wp-content/uploads/2013/11/Nutrition-Background.jpg");
+    
+}
+

@@ -1,0 +1,52 @@
+<header>
+  <nav  class="navbar navbar-light">
+    <div class="container-fluid">
+      <button class="btn btn-danger" (click)="add()">
+        <mat-icon>add</mat-icon>
+      </button>
+  <button class="btn btn-danger" type="submit" (click)="logout()">
+    <mat-icon>power_settings_new</mat-icon>
+  </button>
+</div>
+  </nav>
+
+</header>
+  
+    
+
+   
+  
+   
+
+ 
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Products List</span>
+</nav>
+
+<div class="clsmat">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let nutri of productArr">
+        <div class="card col-12 col-sm-12 col-md-7 col-lg-2">
+         
+          <h5><strong>{{nutri.name}}</strong></h5>
+          <img src="{{nutri.image}}" alt="">
+          <p>
+          Productid:{{nutri.productid}}<br>
+          Calory :{{nutri.calory}}<br>
+          Glycel : {{nutri.glycel}}<br>
+          Fats : {{nutri.fats}}<br>
+          Carbs : {{nutri.carbs}}<br>
+          Protien : {{nutri.protein}}<br>
+        </p>
+          <button mat-icon-button class="btn btn-danger" (click)="delete(nutri.productid)">
+            <mat-icon>delete</mat-icon>
+        </button>
+        
+        </div>
+      </ng-container>
+</div>
+</div>
+
+</div>
+<router-outlet name="noteEditOutlet"></router-outlet>
